@@ -20,12 +20,13 @@
 }
 .section2 .how h1{
     font-size: 4rem;
+    color: #333;
 }
 .section2 .how p{
     font-size: 18px;
     line-height: 35px;
     font-weight: 600;
-    color: grey;
+    color: #444;
 }
 .section2 .how .button-container{
     margin-top: 40px;
