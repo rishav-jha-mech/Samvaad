@@ -46,7 +46,9 @@
     .navbar{
         margin: 0;
         padding: 7px 0;
+        align-items: center;
         justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.076);
     }
     .navbar #bartimetoggler{
         display: block;
@@ -65,7 +67,7 @@
         top: 67px;
         text-align: center;
         transition: 0.5s;
-        animation: nav-anime 0.4s ease-in-out;
+        animation: nav-anime 0.4s linear;
         overflow-y: hidden;
         z-index: 1000;
     }
@@ -76,16 +78,13 @@
     }
     @keyframes nav-anime{
         0%{
-            top: 150px;
-            opacity: 0;
-        }
-        70%{
-            opacity: 0.4;
+            left: -70vw;
+            opacity: 0.5;
         }
         100%{
+            left: 0;
             top: 67px;
             opacity: 1;
-            z-index: 1;
         }
     }
 }

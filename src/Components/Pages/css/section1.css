@@ -1,24 +1,20 @@
-.HomeParent{
-    background-color: rgb(236, 235, 235); /* #202731 */
-    min-height: 100vh;
-}
-.HomeParent section{
+.HomeParent .section1{
     min-height: 90vh;
-    background-color: rgb(236, 235, 235);
+    background-color: #fff;
     padding: 0 125px;
     overflow-x: hidden;
     display: flex;
     justify-content: space-around;
 }
-/* Text Section  */
-.HomeParent section .text{
+/* Text .Section1  */
+.HomeParent .section1 .text{
     padding: 15px;
     flex: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.HomeParent section .text p{
+.HomeParent .section1 .text p{
     color: #6f00ff;
     font-size: 15px;
     letter-spacing: 1px;
@@ -26,19 +22,19 @@
     font-weight: 600;
     margin: 0;
 }
-.HomeParent section .text h1{
+.HomeParent .section1 .text h1{
     color: #333;
     font-size: 3.2rem;
     font-weight: 700;
 }
-.HomeParent section .text h5{
+.HomeParent .section1 .text h5{
     color: #444;
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 2.2rem;
 }
 
-/* Button sECTION  */
+/* Button .sECTION1  */
 .button-container{
     margin-top: 25px;
     padding: 10px;
@@ -61,99 +57,99 @@
     background-color: #6f00ff;
     border: 1.4px solid transparent;
 }
-/* Button sECTION  */
+/* Button .sECTION1  */
 
 
-/* Text Section  */
+/* Text .Section1  */
 
 
 
-/* Image Section */
-.HomeParent section .image{
+/* Image .Section1 */
+.HomeParent .section1 .image{
     /* background-color: #00ff; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
 }
-.HomeParent section .image img{
+.HomeParent .section1 .image img{
     height: 500px;
 }
-/* Image Section */
+/* Image .Section1 */
 
 /*Responsive Part*/
 @media(max-width:1250px){
-    .HomeParent section{
+    .HomeParent .section1{
         padding: 0 75px;
     }
-    .HomeParent section .image img{
+    .HomeParent .section1 .image img{
         height: 400px;
     }
 }
 @media(max-width:1050px){
-    .HomeParent section{
+    .HomeParent .section1{
         padding: 0 15px;
     }
-    .HomeParent section .image img{
+    .HomeParent .section1 .image img{
         height: 400px;
     }
 }
 @media(max-width:900px){
-    .HomeParent section .image img{
+    .HomeParent .section1 .image img{
         height: 350px;
     }
 }
 @media(max-width:825px){
-    .HomeParent section{
+    .HomeParent .section1{
         min-height: 75vh;
     }
-    .HomeParent section .image{
+    .HomeParent .section1 .image{
         display: none;
     }
 }
 @media(max-width:600px){
-    .HomeParent section{
+    .HomeParent .section1{
         padding: 0 0;
-    }
-    .HomeParent section .text{
-        /* background-color: rgb(247, 247, 0); */
     }
 }
 @media(max-width:540px){
-    .HomeParent section{
+    .HomeParent .section1{
         min-height: 90vh;
     }
-    .HomeParent section .text h1{
+    .HomeParent .section1 .text h1{
         font-size: 2.5rem;
     }
 }
 @media(max-width:400px){
-    .HomeParent section {
+    .HomeParent .section1 {
         min-height: unset;
     }
-    .HomeParent section .text{
+    .HomeParent .section1 .text{
         justify-content: flex-start;
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    .HomeParent section .text p{
-        margin-bottom: 10px;
+    .HomeParent .section1 .text p{
+        margin-bottom: 15px;
     }
-    .HomeParent section .text .button-container{
+    .HomeParent .section1 .text .button-container{
         margin-top: 30px;
         display: flex;
         justify-content: space-around;
     }
-    .HomeParent section .text .button-container a{
+    .HomeParent .section1 .text .button-container a{
         font-size: 18px;
         margin: 0;
     }
+    .HomeParent .section1 .text h1{
+        font-size: 2.45rem;
+    }
 }
-@media(max-width:350px){
-    .HomeParent section .text .button-container{
+@media(max-width:365px){
+    .HomeParent .section1 .text .button-container{
         flex-direction: column;
     }
-    .HomeParent section .text .button-container a{
+    .HomeParent .section1 .text .button-container a{
         margin-bottom: 12px;
         text-align: center;
     }
