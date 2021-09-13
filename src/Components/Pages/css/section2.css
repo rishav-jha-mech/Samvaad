@@ -1,4 +1,136 @@
 .section2{
-    background: #ff156f !important;
-    min-height: 350px;
+    min-height: 90vh;
+    /* background-color: #ff45; Maybe used in future*/
+    padding: 0 125px;
+    display: flex;
 }
+.section2 .how, .steps{
+    flex: 1;
+}
+/* How Portion */
+.section2 .how{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.allblock{
+    display: block;
+    color: #6f00ff;
+}
+.section2 .how h1{
+    font-size: 4rem;
+}
+.section2 .how p{
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 600;
+    color: grey;
+}
+.section2 .how .button-container{
+    margin-top: 40px;
+}
+.section2 .how a{
+    padding: 15px 30px;
+    color: white;
+    background-color: #6f00ff;
+}
+/* How Portion */
+
+/* Steps Portion */
+.section2 .steps{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section2 .steps .row{
+    display: flex;
+    margin: 20px 0;
+}
+.section2 .steps .row .step{
+    margin: 0 10px;
+    padding: 30px 22px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.13);
+}
+.section2 .steps .row .step span{
+    font-size: 21px;
+    padding: 8px 16px;
+    border-radius: 7px;
+    font-weight: 600;
+    background: #6f00ff;
+    color: white;
+}
+.section2 .steps .row .step h2{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 18px 0;
+}
+.section2 .steps .row .step h4{
+    color: #666;
+    font-weight: 600;
+}
+/* Steps Portion */
+
+/* Responsive portion */
+@media(max-width:1100px){
+    .section2{
+        padding: 0 50px;
+    }
+    .section2 .steps .row{
+        margin: 0;
+        flex-direction: column;
+    }
+    .section2 .steps .row .step{
+        margin: 10px 10px;
+    }
+}
+@media(max-width:800px){
+    .section2{
+        padding: 0 0;
+    }
+}
+@media(max-width:600px){
+    .section2{
+        flex-direction: column;
+    }       
+    .section2 .how {
+        min-height: 275px;
+    }
+    .section2 .how .button-container a{
+        padding: 10px 20px;
+        margin: 15px 0;
+    }
+    .section2 .how h1{
+        font-size: 2.5rem;
+    }
+    .section2 .how p{
+        margin: 20px 0;
+        margin-bottom: 0;
+    }       
+    .section2 .how,.section2 .steps{
+        padding: 15px;
+    }
+    .section2 .steps .row{
+        margin: 0;
+        flex-direction: row;
+    }
+}
+@media(max-width:450px){
+    .section2 .steps .row .step{
+        padding: 22px 12px;
+    }
+}
+@media(max-width:410px){
+    .section2 .steps .row{
+        margin: 0;
+        flex-direction: column;
+    }   
+    .section2 .steps .row .step{
+        margin: 14px 8px;
+    }
+}
+/* Responsive portion */

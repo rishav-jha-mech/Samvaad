@@ -1,6 +1,6 @@
 .HomeParent .section1{
-    min-height: 90vh;
-    background-color: #fff;
+    min-height: 92vh;
+    /* background-color: #f865; Maybe used in future */
     padding: 0 125px;
     overflow-x: hidden;
     display: flex;
