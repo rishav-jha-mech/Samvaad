@@ -1,12 +1,24 @@
 .footer{
-    background: rgb(248, 245, 245);
+    background: #f4f4f4;
     padding: 12px 0;
     display: flex;
     justify-content: space-around;
+    overflow: hidden;
 }
 .footer .com{
     flex: 1;
+    margin: 0 5vw;
     padding: 20px;
+}
+@media(max-width:900px){
+    .footer .com{
+        margin: 0 3.5vw;
+    }
+}
+@media(max-width:600px){
+    .footer .com{
+        margin: 0 0 !important;
+    }
 }
 /* Samvaad css */
 .footer .samvaad h1{
@@ -14,6 +26,8 @@
 }
 .footer .samvaad p{
     margin: 15px 0;
+    font-weight: 500;
+    color: #555;
 }
 .footer .samvaad h3{
     font-size: 25px;
