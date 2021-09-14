@@ -1,16 +1,27 @@
-import React from 'react'
-import Navbar from '../Navbar'
-// import Footer from '../Footer'
 import NewsCard from '../NewsCard'
-
+import './css/newspage.css'
 
 import './css/newspage.css'
 function NewsPage() {
     return (
-        <>
-            <Navbar />
+        <>  
+        <h1 id="lane">Latest News </h1>
+        <div className="Card-Container">
             <NewsCard />
-            {/* <Footer /> */}
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+        </div>
         </>
     )
 }
