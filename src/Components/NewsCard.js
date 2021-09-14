@@ -4,8 +4,8 @@ function NewsCard(props) {
     return (<>
         <div className="Newscard">
             <div className="skeleton img-container">
-                <p className="skeleton">{props.source}</p>
-                <img class="skeleton " src=""/>
+                <p className="skeleton">{props.login}</p>
+                <img class="skeleton " src={props.urlToImage}/>
             </div>
             <div className="info">
                 <div className="skeleton skeleton-text author">{props.author}</div>
