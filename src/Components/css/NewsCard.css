@@ -79,7 +79,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   min-height: 21.6px;
-  color: #333;
+  color: #666;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -138,8 +138,11 @@
     margin-top: 10px;
     text-decoration: none;
   }
+  .Newscard .img-container{
+    min-height: 220px;
+  }
   .Newscard .img-container img {
-    min-height: 200px;
+    min-height: 220px;
   }
 }
 /* responsive css */
