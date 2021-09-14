@@ -81,6 +81,7 @@
   min-height: 21.6px;
   color: #666;
   font-weight: 700;
+  overflow: hidden;
   margin-bottom: 10px;
 }
 .info .title-loaded{

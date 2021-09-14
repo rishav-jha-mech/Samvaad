@@ -4,18 +4,18 @@ import '../css/NewsCard.css'
 import './css/newspage.css'
 import SkeletonPlaceholder from './SkeletonPlaceholder'
 import './css/newspage.css'
+import {NewsCardLoading , NewsCardLoaded} from '../NewsCard'                                                                                                                                                                           
 import ErrorNews from '../ErrorNews'
 function NewsPage() {
     const [loading,setLoading]= useState(false);
     const [newsData, setNewsData] = useState([]);
     const [error, setError]= useState(false);
-
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             method: 'get',
-            url: 'https://newsapi.org/v2/top-headlines&apiKey=985721b4b85griir6y04341b206685484b67200',
+            url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=985721b4b8504341b206685484b67200`,
         })
             .then((response) => {
                 // console.log(response.data);
@@ -27,9 +27,11 @@ function NewsPage() {
                 setError(true)
             })
     }
+
     useEffect(() => {
         FetchTheNews()
-    }, []);
+    },[]);
+
     // console.log(loading)
     return (
         <>  {!error ? <>
@@ -38,35 +40,13 @@ function NewsPage() {
                 {loading ? 
                     SkeletonPlaceholder.map(() => {
                         return (<>
-                            <div className="Newscard">
-                                <div className="skeleton img-container">
-                                    <p className="skeleton"></p>
-                                    <img class="skeleton" />
-                                </div>
-                                <div className="info">
-                                    <div className="skeleton skeleton-text author"></div>
-                                    <div className="skeleton skeleton-text"></div>
-                                    <div className="skeleton skeleton-text"></div>
-                                    <div className="skeleton skeleton-text"></div>
-                                </div>
-                                <a className="readmore skeleton loading" role="button"> Read More </a>
-                            </div>
+                            <NewsCardLoading />
                         </>)
                     })
                 : 
                 newsData.map((data) => {
                     return (<>
-                        <div className="Newscard">
-                            <div className="img-container loaded-img-container">
-                                <p>{data.source.name}</p>
-                                <img src={data.urlToImage} />
-                            </div>
-                            <div className="info">
-                                <div className="author-loaded">{data.author ? data.author : 'Anonymous'}</div>
-                                <div className="title-loaded">{data.title}</div>
-                            </div>
-                            <a className="readmore" href={data.url}> Read More </a>
-                        </div>
+                        <NewsCardLoaded name={data.source.name} urlToImage={data.urlToImage} author={data.author} title={data.title} url={data.url} />
                     </>)
                 })
 

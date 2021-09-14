@@ -14,7 +14,6 @@ const toggle = () => setShowbar(o => !o);
                     <a class="ifactive" href="#">Home</a>
                     <a class="ifactive" href="#">About</a>
                     <a class="ifactive" href="#">Read News</a>
-                    <a class="ifactive" href="#">Help</a>
                     <a class="ifactive" href="#">Donate</a>
                     <a href="#" id="contribute">Contribute</a>
                 </div>
@@ -29,7 +28,6 @@ const toggle = () => setShowbar(o => !o);
                     <a href="#">Home</a>
                     <a href="#">About</a>
                     <a href="#">Read News</a>
-                    <a href="#">Help</a>
                     <a href="#">Donate</a>
                     <a href="#">Contribute</a>
                 </div>

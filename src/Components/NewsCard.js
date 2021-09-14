@@ -1,21 +1,37 @@
 import './css/NewsCard.css'
-
-function NewsCard(props) {
+// both NewsCardLoading and NewCardLoaded have the same css.
+function NewsCardLoading() {
     return (<>
         <div className="Newscard">
             <div className="skeleton img-container">
-                <p className="skeleton">{props.login}</p>
-                <img class="skeleton " src={props.urlToImage}/>
+                <p className="skeleton"></p>
+                <img class="skeleton" />
             </div>
             <div className="info">
-                <div className="skeleton skeleton-text author">{props.author}</div>
-                <div className="skeleton skeleton-text">{props.title}</div>
+                <div className="skeleton skeleton-text author"></div>
+                <div className="skeleton skeleton-text"></div>
                 <div className="skeleton skeleton-text"></div>
                 <div className="skeleton skeleton-text"></div>
             </div>
-            <a className="readmore skeleton" role="button" href={props.link}> Read More </a>
+            <a className="readmore skeleton" role="button"> Read More </a>
         </div>
     </>)
 }
 
-export default NewsCard
+function NewsCardLoaded(data) {
+    return (<>
+        <div className="Newscard">
+            <div className="img-container loaded-img-container">
+                <p>{data.name}</p>
+                <img src={data.urlToImage} />
+            </div>
+            <div className="info">
+                <div className="author-loaded">{data.author ? data.author : 'Anonymous'}</div>
+                <div className="title-loaded">{data.title}</div>
+            </div>
+            <a className="readmore" href={data.url}> Read More </a>
+        </div>
+    </>)
+}
+
+export { NewsCardLoading, NewsCardLoaded }
