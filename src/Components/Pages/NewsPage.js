@@ -10,14 +10,15 @@ function NewsPage() {
     const [loading,setLoading]= useState(false);
     const [newsData, setNewsData] = useState([]);
     const [error, setError]= useState(false);
-    const [country,setCountry] = useState("us");
+    const [country,setCountry] = useState("in"); // Default Country Set To India
     const [category,setCategory] = useState("");
+    const [show,setShow] = useState(false);
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             method: 'get',
-            url: `https://newsapi.org/v2/top-headlines?country=${country}${category}&pageSize=100&apiKey=985721b4b8504341b206685484b67200`,
+            url: `https://newsapi.org/v2/top-headlines?country=${country}${category}&pageSize=100&apiKey=a9692c6fe8ce4ad4acaaf246d31fb5b1`, //&pageSize=100 therefore we wil be getting all the posts
         })
             .then((response) => {
                 // console.log(response.data);
@@ -26,7 +27,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 // console.error(error);
-                setError(false) //
+                setError(true) //
             })
     }
 
@@ -34,18 +35,26 @@ function NewsPage() {
         FetchTheNews()
     },[country,category]);
 
+    const togglershowhide= () =>{
+        if (show === false){
+            setShow(true);
+        }
+        else{
+            setShow(false);
+        }
+    }
     return (
         <>  {!error ? <>
         <div className="taskbar">
-            <h1 id="lane4354354">Latest <span id="News35365654">N</span>ews </h1>
+            <h1 id="lane4354354">{category ? category.slice(10,) : 'General'}</h1>
             <div className="sort-box-container">
-                <p className="sort">
+                <p className="sort" onClick={togglershowhide}>
                     Options <i class="far fa-list-alt"></i>
                 </p>
-                <div class="sort-choices-container">
+                <div className={`sort-choices-container ${show ? "flex" : "hidden"}`}>
                     <div className="column column1">
                         <h1>Countries <i class="fas fa-caret-down"></i></h1>
-                        <p onClick={() => setCountry("ae")}>Uniated Arab Emirates (ae)</p>
+                        <p onClick={() => setCountry("ae")}>United Arab Emirates (ae)</p>
                         <p onClick={() => setCountry("ar")}>Argentina(ar)</p>
                         <p onClick={() => setCountry("at")}>Austria(at)</p>
                         <p onClick={() => setCountry("au")}>Australia(au)</p>
@@ -101,35 +110,19 @@ function NewsPage() {
                     </div>
                     <div className="column column2">
                         <h1>Categories <i class="fas fa-caret-down"></i></h1>
-                        <p onClick={() => setCategory("")}>Default(Random)</p>
+                        <p onClick={() => setCategory("&category=general")}>General</p>
                         <p onClick={() => setCategory("&category=business")}>Business</p>
                         <p onClick={() => setCategory("&category=entertainment")}>Entertainment</p>
-                        <p onClick={() => setCategory("&category=general")}>General</p>
                         <p onClick={() => setCategory("&category=health")}>Health</p>
                         <p onClick={() => setCategory("&category=science")}>Science</p>
                         <p onClick={() => setCategory("&category=sports")}>Sports</p>
                         <p onClick={() => setCategory("&category=technology")}>Technology</p>
                     </div>
-                    <div className="column column3">
-                        <h1>Language <i class="fas fa-caret-down"></i></h1>
-                        <p>Arabic(ar)</p>
-                        <p>German(de)</p>
-                        <p>English(en)</p>
-                        <p>Spanish(es)</p>
-                        <p>French(fr)</p>
-                        <p>Hebrew(he)</p>
-                        <p>Italian(it)</p>
-                        <p>Dutch(nl)</p>
-                        <p>Norwegian(no)</p>
-                        <p>Portuguese(pt)</p>
-                        <p>Russian(ru)</p>
-                        <p>Swedish(se)</p>
-                        <p>Chinese(zh)</p>
-                    </div>
+                    <i className="showhide fa fa-times" onClick={togglershowhide} />
                 </div>
             </div>
         </div>
-        <h3 id="stats">Country : <span id="autocap">{country}</span> Category : <span id="autocap">{category ? category : 'random'}</span>  No. of Results : <span id="autocap">{newsData.length}</span></h3>
+        <h3 id="stats">Country Code : <span id="autocap">{country}</span></h3><h3 id="stats"> Category : <span id="autocap">{category ? category.slice(10,) : 'General'}</span>  No. of Results : <span id="autocap">{newsData.length}</span></h3>
             <div className="Card-Container">
                 {loading ? 
                     SkeletonPlaceholder.map(() => {

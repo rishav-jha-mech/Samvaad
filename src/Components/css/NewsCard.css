@@ -1,5 +1,5 @@
 .Newscard {
-  height: 418px;
+  height: 400px;
   width: 300px;
   margin: 25px 16px;
   border-radius: 5px;
@@ -27,6 +27,7 @@
   border-radius: 4px;
 }
 .date-loaded{
+  margin-top: 5px 0;
 }
 .author {
     width: 30%;
@@ -96,7 +97,7 @@
   height: 64.8px;
 }
 .readmore{
-  background: dodgerblue;
+  background: #ff156f;
   padding: 6px 12px;
   color: white;
   font-weight: 500;
