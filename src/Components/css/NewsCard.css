@@ -1,5 +1,5 @@
 .Newscard {
-  height: 400px;
+  height: 418px;
   width: 300px;
   margin: 25px 16px;
   border-radius: 5px;
@@ -8,7 +8,6 @@
 }
 .skeleton {
   opacity: 0.7;
-  z-index: 100;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
@@ -26,6 +25,8 @@
   height: 0.7rem;
   margin-bottom: 0.55rem;
   border-radius: 4px;
+}
+.date-loaded{
 }
 .author {
     width: 30%;

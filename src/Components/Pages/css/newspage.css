@@ -5,11 +5,10 @@
     padding: 40px 0;
 }
 #lane4354354{
-    text-align: center;
     font-size: 3.5rem;
     letter-spacing: 2px;
     color: #444;
-    margin-top: 35px;
+    /* background-color: #ff1; */
 }
 #lane4354354::first-letter,#News35365654{
     font-size: 4rem;
@@ -22,4 +21,213 @@
     #lane4354354::first-letter,#News35365654{
         font-size: 3.2rem;
     }
+}
+/* TaskBar CSS To Get The News From Particular Domain Country or Language*/
+.taskbar{
+    margin-top: 35px;
+    padding: 5px 125px;
+    background-color: #f5f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sort{
+    background: #fff;
+    padding: 11px 25px;
+    border-radius: 8px;
+    border: 2px solid #6f00ff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.sort-choices-container{
+    background: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.068);
+    z-index: 12;
+    position: absolute;
+    top: 181px;
+    right: 120px;
+    min-width: 55vw;
+    padding: 25px 35px;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+.sort-box-container{
+    cursor: pointer;
+}
+.sort-box-container:hover .sort-choices-container{
+    display: flex ;
+}
+.sort-choices-container:hover{
+    display: flex;
+}
+.sort-choices-container .column{
+    flex: 1;
+    margin: 0 12px;
+    height: 400px;
+}
+
+.sort-choices-container .column h1{
+    font-size: 1.8rem;
+    color: #6f00ff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.sort-choices-container .column p{
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 5px;
+    color:#444;
+}
+.sort-choices-container .column p:hover{
+    background-color: #6f00ff31;
+}
+.sort-choices-container .column1{
+    /* background-color: orangered; */
+    overflow-y: scroll;
+}
+
+.sort-choices-container .column2{
+    /* background-color: #f6f5; */
+}
+.sort-choices-container .column3{
+    /* background: aquamarine; */
+    overflow-y: scroll;
+}
+/* Carat will beshown only when there is "dropdown" */
+.sort-choices-container .fa-caret-down{
+    display: none;
+}
+/* Carat will beshown only when there is "dropdown" */
+
+/* TaskBar CSS To Get The News From Particular Domain Country or Language*/
+
+
+/* responsive css */
+@media(max-width:1040px){
+    .taskbar{
+        padding: 5px 30px;
+    }
+    .sort-choices-container{
+        right: 70px;
+    }
+}
+@media(max-width:700px){
+    .taskbar{
+        padding: 8px 8px;
+        margin-top: 15px;
+    }
+    .sort-choices-container{
+        right: 20px;
+        padding: 18px 10px;
+    }
+    .sort-choices-container .column{
+        height: 300px;
+        overflow: scroll;
+    }
+}
+@media(max-width:600px){
+    .sort-choices-container{
+        right: 0;
+        left: 0;
+        padding: 0;
+        width: 100vw;
+    }
+}
+@media(max-width:550px){
+    .taskbar{
+        flex-direction: column;
+        align-items: stretch;
+        /* background-color: #00da1a; */
+    }
+    .taskbar .sort-box-container{
+        margin-top: 15px;
+    }
+    .taskbar .sort-box-container .sort{
+        font-weight: 700;
+        text-align: center;
+        padding: 8px 0;
+        color: #6f00ff;
+    }
+    .sort-choices-container{
+        top: 243px;
+    }    
+    .sort-choices-container .column{
+        flex: 1;
+        margin: 0 0;
+        padding: 0 8px;
+        height: 400px;
+    }    
+    .sort-choices-container .column h1{
+        font-size: 1.6rem;
+    }
+    .sort-choices-container .column p{
+        font-size: 1rem;
+        padding: 6px 3px;
+    }
+}
+/* MAnaging The Options in smaller devices*/
+@media(max-width:480px){ /* Here Dropdown is made and carat is shown */
+    #lane4354354{
+        text-align: center;
+    }
+    .sort-choices-container {
+        flex-direction: column;
+        padding: 3px 0;
+        box-shadow: 0px 15px 10px -15px #111;
+    }
+    .sort-choices-container .column{
+        height: unset;
+        min-height: 2px;
+        max-height: 250px;
+        padding: 10px 6px;
+    }
+    .sort-choices-container .column h1{
+        font-size: 1.2rem;
+    }
+    .sort-choices-container .column p{
+        display: none;
+        padding: 5px 5px;
+    }
+    .sort-choices-container .column1:hover p{
+        display: block;
+    }
+    .sort-choices-container .column2:hover p{
+        display: block;
+    }
+    .sort-choices-container .column3:hover p{
+        display: block;
+    }       
+    .sort-choices-container .fa-caret-down{
+        display: unset;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
+/* responsive css */
+
+/* Custom Scrollbar*/
+
+.sort-choices-container .column::-webkit-scrollbar {
+  width: 5px;
+}
+.sort-choices-container .column::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+}
+.sort-choices-container .column::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.sort-choices-container .column::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Custom Scrollbar*/
+#stats{
+    text-align: center;
+}
+#autocap{
+    text-transform: capitalize;
+    margin-right: 16px;
 }

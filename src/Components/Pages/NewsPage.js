@@ -10,12 +10,14 @@ function NewsPage() {
     const [loading,setLoading]= useState(false);
     const [newsData, setNewsData] = useState([]);
     const [error, setError]= useState(false);
+    const [country,setCountry] = useState("us");
+    const [category,setCategory] = useState("");
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             method: 'get',
-            url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=985721b4b8504341b206685484b67200`,
+            url: `https://newsapi.org/v2/top-headlines?country=${country}${category}&pageSize=100&apiKey=985721b4b8504341b206685484b67200`,
         })
             .then((response) => {
                 // console.log(response.data);
@@ -24,18 +26,110 @@ function NewsPage() {
             })
             .catch((error) => {
                 // console.error(error);
-                setError(true)
+                setError(false) //
             })
     }
 
     useEffect(() => {
         FetchTheNews()
-    },[]);
+    },[country,category]);
 
-    // console.log(loading)
     return (
         <>  {!error ? <>
+        <div className="taskbar">
             <h1 id="lane4354354">Latest <span id="News35365654">N</span>ews </h1>
+            <div className="sort-box-container">
+                <p className="sort">
+                    Options <i class="far fa-list-alt"></i>
+                </p>
+                <div class="sort-choices-container">
+                    <div className="column column1">
+                        <h1>Countries <i class="fas fa-caret-down"></i></h1>
+                        <p onClick={() => setCountry("ae")}>Uniated Arab Emirates (ae)</p>
+                        <p onClick={() => setCountry("ar")}>Argentina(ar)</p>
+                        <p onClick={() => setCountry("at")}>Austria(at)</p>
+                        <p onClick={() => setCountry("au")}>Australia(au)</p>
+                        <p onClick={() => setCountry("be")}>Belgium(be)</p>
+                        <p onClick={() => setCountry("bg")}>Bulgaria(bg)</p>
+                        <p onClick={() => setCountry("br")}>Brazil(br)</p>
+                        <p onClick={() => setCountry("ca")}>Canada(ca)</p>
+                        <p onClick={() => setCountry("ch")}>Switzerland(ch)</p>
+                        <p onClick={() => setCountry("cn")}>China(cn)</p>
+                        <p onClick={() => setCountry("co")}>Colombia(co)</p>
+                        <p onClick={() => setCountry("cu")}>Cuba(cu)</p>
+                        <p onClick={() => setCountry("cz")}>Czech(cz)</p>
+                        <p onClick={() => setCountry("de")}>Germany(de)</p>
+                        <p onClick={() => setCountry("eg")}>Egypt(eg)</p>
+                        <p onClick={() => setCountry("fr")}>France(fr)</p>
+                        <p onClick={() => setCountry("gb")}>United Kingdom(gb)</p>
+                        <p onClick={() => setCountry("gr")}>Greece(gr)</p>
+                        <p onClick={() => setCountry("hk")}>Hong Kong(hk)</p>
+                        <p onClick={() => setCountry("hu")}>Hungary(hu)</p>
+                        <p onClick={() => setCountry("id")}>Indonesia(id)</p>
+                        <p onClick={() => setCountry("ie")}>Ireland(ie)</p>
+                        <p onClick={() => setCountry("il")}>Isreal(il)</p>
+                        <p onClick={() => setCountry("in")}>India(in)</p>
+                        <p onClick={() => setCountry("it")}>Italy(it)</p>
+                        <p onClick={() => setCountry("jp")}>Japan(jp)</p>
+                        <p onClick={() => setCountry("kr")}>South Korea(kr)</p>
+                        <p onClick={() => setCountry("lt")}>Lithuania(lt)</p>
+                        <p onClick={() => setCountry("lv")}>Latvia(lv)</p>
+                        <p onClick={() => setCountry("ma")}>Morocco(ma)</p>
+                        <p onClick={() => setCountry("mx")}>Mexico(mx)</p>
+                        <p onClick={() => setCountry("my")}>Malaysia(my)</p>
+                        <p onClick={() => setCountry("ng")}>Nigeria(ng)</p>
+                        <p onClick={() => setCountry("nl")}>Netherlands(nl)</p>
+                        <p onClick={() => setCountry("no")}>Norway(no)</p>
+                        <p onClick={() => setCountry("nz")}>New Zealand(nz)</p>
+                        <p onClick={() => setCountry("ph")}>Phillipines(ph)</p>
+                        <p onClick={() => setCountry("pl")}>Poland(pl)</p>
+                        <p onClick={() => setCountry("pt")}>Portugal(pt)</p>
+                        <p onClick={() => setCountry("ro")}>Romania(ro)</p>
+                        <p onClick={() => setCountry("rs")}>Serbia(rs)</p>
+                        <p onClick={() => setCountry("ru")}>Russia(ru)</p>
+                        <p onClick={() => setCountry("sa")}>South Africa(sa)</p>
+                        <p onClick={() => setCountry("se")}>Sweden(se)</p>
+                        <p onClick={() => setCountry("sg")}>Singapore(sg)</p>
+                        <p onClick={() => setCountry("si")}>Slovenia(si)</p>
+                        <p onClick={() => setCountry("sk")}>Slovakia(sk)</p>
+                        <p onClick={() => setCountry("th")}>Thailand(th)</p>
+                        <p onClick={() => setCountry("tr")}>Turkey(tr)</p>
+                        <p onClick={() => setCountry("tw")}>Taiwan(tw)</p>
+                        <p onClick={() => setCountry("ua")}>Ukraine(ua)</p>
+                        <p onClick={() => setCountry("us")}>United States of America(us)</p>
+                        <p onClick={() => setCountry("ve")}>Venezuela(ve)</p>
+                    </div>
+                    <div className="column column2">
+                        <h1>Categories <i class="fas fa-caret-down"></i></h1>
+                        <p onClick={() => setCategory("")}>Default(Random)</p>
+                        <p onClick={() => setCategory("&category=business")}>Business</p>
+                        <p onClick={() => setCategory("&category=entertainment")}>Entertainment</p>
+                        <p onClick={() => setCategory("&category=general")}>General</p>
+                        <p onClick={() => setCategory("&category=health")}>Health</p>
+                        <p onClick={() => setCategory("&category=science")}>Science</p>
+                        <p onClick={() => setCategory("&category=sports")}>Sports</p>
+                        <p onClick={() => setCategory("&category=technology")}>Technology</p>
+                    </div>
+                    <div className="column column3">
+                        <h1>Language <i class="fas fa-caret-down"></i></h1>
+                        <p>Arabic(ar)</p>
+                        <p>German(de)</p>
+                        <p>English(en)</p>
+                        <p>Spanish(es)</p>
+                        <p>French(fr)</p>
+                        <p>Hebrew(he)</p>
+                        <p>Italian(it)</p>
+                        <p>Dutch(nl)</p>
+                        <p>Norwegian(no)</p>
+                        <p>Portuguese(pt)</p>
+                        <p>Russian(ru)</p>
+                        <p>Swedish(se)</p>
+                        <p>Chinese(zh)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 id="stats">Country : <span id="autocap">{country}</span> Category : <span id="autocap">{category ? category : 'random'}</span>  No. of Results : <span id="autocap">{newsData.length}</span></h3>
             <div className="Card-Container">
                 {loading ? 
                     SkeletonPlaceholder.map(() => {
@@ -46,7 +140,7 @@ function NewsPage() {
                 : 
                 newsData.map((data) => {
                     return (<>
-                        <NewsCardLoaded name={data.source.name} urlToImage={data.urlToImage} author={data.author} title={data.title} url={data.url} />
+                        <NewsCardLoaded name={data.source.name} urlToImage={data.urlToImage} date={data.publishedAt} author={data.author} title={data.title} url={data.url} />
                     </>)
                 })
 

@@ -26,6 +26,7 @@ function NewsCardLoaded(data) {
                 <img src={data.urlToImage} />
             </div>
             <div className="info">
+                <div className="date-loaded">{data.date}</div>
                 <div className="author-loaded">{data.author ? data.author : 'Anonymous'}</div>
                 <div className="title-loaded">{data.title}</div>
             </div>
