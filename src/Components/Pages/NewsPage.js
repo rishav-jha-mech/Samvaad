@@ -26,7 +26,11 @@ function NewsPage() {
                 setLoading(false);
             })
             .catch((error) => {
-                // console.error(error);
+                console.error(error);
+                console.error(error);
+                console.error(error);
+                console.error(error);
+                console.error(error);
                 setError(true) //
             })
     }
