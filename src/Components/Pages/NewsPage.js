@@ -10,8 +10,8 @@ function NewsPage() {
     const [loading,setLoading]= useState(false);
     const [newsData, setNewsData] = useState([]);
     const [error, setError]= useState(false);
-    const [country,setCountry] = useState("in"); // Default Country Set To India
-    const [category,setCategory] = useState("");
+    const [country,setCountry] = useState("in");                  // Default Country Set To => India
+    const [category,setCategory] = useState("general"); // Default set to =>         General
     const [show,setShow] = useState(false);
     const FetchTheNews = () => {
         setLoading(true)
@@ -19,7 +19,7 @@ function NewsPage() {
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://localhost:8000/api`, //&pageSize=100 therefore we wil be getting all the posts
+            url: `http://localhost:8000/api/${country}/${category}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
         })
             .then((response) => {
                 console.log(response.data);
@@ -48,7 +48,7 @@ function NewsPage() {
     return (
         <>  {!error ? <>
         <div className="taskbar">
-            <h1 id="lane4354354">{category ? category.slice(10,) : 'General'}</h1>
+            <h1 id="lane4354354">{category ? category : 'General'}</h1>
             <div className="sort-box-container">
                 <p className="sort" onClick={togglershowhide}>
                     Options <i class="far fa-list-alt"></i>
@@ -112,19 +112,19 @@ function NewsPage() {
                     </div>
                     <div className="column column2">
                         <h1>Categories <i class="fas fa-caret-down"></i></h1>
-                        <p onClick={() => setCategory("&category=general")}>General</p>
-                        <p onClick={() => setCategory("&category=business")}>Business</p>
-                        <p onClick={() => setCategory("&category=entertainment")}>Entertainment</p>
-                        <p onClick={() => setCategory("&category=health")}>Health</p>
-                        <p onClick={() => setCategory("&category=science")}>Science</p>
-                        <p onClick={() => setCategory("&category=sports")}>Sports</p>
-                        <p onClick={() => setCategory("&category=technology")}>Technology</p>
+                        <p onClick={() => setCategory("general")}>General</p>
+                        <p onClick={() => setCategory("business")}>Business</p>
+                        <p onClick={() => setCategory("entertainment")}>Entertainment</p>
+                        <p onClick={() => setCategory("health")}>Health</p>
+                        <p onClick={() => setCategory("science")}>Science</p>
+                        <p onClick={() => setCategory("sports")}>Sports</p>
+                        <p onClick={() => setCategory("technology")}>Technology</p>
                     </div>
                     <i className="showhide fa fa-times" onClick={togglershowhide} />
                 </div>
             </div>
         </div>
-        <h3 id="stats">Country Code : <span id="autocap">{country}</span></h3><h3 id="stats"> Category : <span id="autocap">{category ? category.slice(10,) : 'General'}</span>  No. of Results : <span id="autocap">{newsData.length}</span></h3>
+        <h3 id="stats">Country Code : <span id="autocap">{country}</span></h3><h3 id="stats"> Category : <span id="autocap">{category ? category : 'General'}</span>  No. of Results : <span id="autocap">{newsData.length}</span></h3>
             <div className="Card-Container">
                 {loading ? 
                     SkeletonPlaceholder.map(() => {
