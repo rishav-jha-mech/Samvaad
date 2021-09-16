@@ -56,69 +56,69 @@ function NewsPage() {
                 <div className={`sort-choices-container ${show ? "flex" : "hidden"}`}>
                     <div className="column column1">
                         <h1>Countries <i class="fas fa-caret-down"></i></h1>
-                        <p onClick={() => {setCountry("ae");togglershowhide()}}>United Arab Emirates (ae)</p>
-                        <p onClick={() => {setCountry("ar");togglershowhide()}}>Argentina(ar)</p>
-                        <p onClick={() => {setCountry("at");togglershowhide()}}>Austria(at)</p>
-                        <p onClick={() => {setCountry("au");togglershowhide()}}>Australia(au)</p>
-                        <p onClick={() => {setCountry("be");togglershowhide()}}>Belgium(be)</p>
-                        <p onClick={() => {setCountry("bg");togglershowhide()}}>Bulgaria(bg)</p>
-                        <p onClick={() => {setCountry("br");togglershowhide()}}>Brazil(br)</p>
-                        <p onClick={() => {setCountry("ca");togglershowhide()}}>Canada(ca)</p>
-                        <p onClick={() => {setCountry("ch");togglershowhide()}}>Switzerland(ch)</p>
-                        <p onClick={() => {setCountry("cn");togglershowhide()}}>China(cn)</p>
-                        <p onClick={() => {setCountry("co");togglershowhide()}}>Colombia(co)</p>
-                        <p onClick={() => {setCountry("cu");togglershowhide()}}>Cuba(cu)</p>
-                        <p onClick={() => {setCountry("cz");togglershowhide()}}>Czech(cz)</p>
-                        <p onClick={() => {setCountry("de");togglershowhide()}}>Germany(de)</p>
-                        <p onClick={() => {setCountry("eg");togglershowhide()}}>Egypt(eg)</p>
-                        <p onClick={() => {setCountry("fr");togglershowhide()}}>France(fr)</p>
-                        <p onClick={() => {setCountry("gb");togglershowhide()}}>United Kingdom(gb)</p>
-                        <p onClick={() => {setCountry("gr");togglershowhide()}}>Greece(gr)</p>
-                        <p onClick={() => {setCountry("hk");togglershowhide()}}>Hong Kong(hk)</p>
-                        <p onClick={() => {setCountry("hu");togglershowhide()}}>Hungary(hu)</p>
-                        <p onClick={() => {setCountry("id");togglershowhide()}}>Indonesia(id)</p>
-                        <p onClick={() => {setCountry("ie");togglershowhide()}}>Ireland(ie)</p>
-                        <p onClick={() => {setCountry("il");togglershowhide()}}>Isreal(il)</p>
-                        <p onClick={() => {setCountry("in");togglershowhide()}}>India(in)</p>
-                        <p onClick={() => {setCountry("it");togglershowhide()}}>Italy(it)</p>
-                        <p onClick={() => {setCountry("jp");togglershowhide()}}>Japan(jp)</p>
-                        <p onClick={() => {setCountry("kr");togglershowhide()}}>South Korea(kr)</p>
-                        <p onClick={() => {setCountry("lt");togglershowhide()}}>Lithuania(lt)</p>
-                        <p onClick={() => {setCountry("lv");togglershowhide()}}>Latvia(lv)</p>
-                        <p onClick={() => {setCountry("ma");togglershowhide()}}>Morocco(ma)</p>
-                        <p onClick={() => {setCountry("mx");togglershowhide()}}>Mexico(mx)</p>
-                        <p onClick={() => {setCountry("my");togglershowhide()}}>Malaysia(my)</p>
-                        <p onClick={() => {setCountry("ng");togglershowhide()}}>Nigeria(ng)</p>
-                        <p onClick={() => {setCountry("nl");togglershowhide()}}>Netherlands(nl)</p>
-                        <p onClick={() => {setCountry("no");togglershowhide()}}>Norway(no)</p>
-                        <p onClick={() => {setCountry("nz");togglershowhide()}}>New Zealand(nz)</p>
-                        <p onClick={() => {setCountry("ph");togglershowhide()}}>Phillipines(ph)</p>
-                        <p onClick={() => {setCountry("pl");togglershowhide()}}>Poland(pl)</p>
-                        <p onClick={() => {setCountry("pt");togglershowhide()}}>Portugal(pt)</p>
-                        <p onClick={() => {setCountry("ro");togglershowhide()}}>Romania(ro)</p>
-                        <p onClick={() => {setCountry("rs");togglershowhide()}}>Serbia(rs)</p>
-                        <p onClick={() => {setCountry("ru");togglershowhide()}}>Russia(ru)</p>
-                        <p onClick={() => {setCountry("sa");togglershowhide()}}>South Africa(sa)</p>
-                        <p onClick={() => {setCountry("se");togglershowhide()}}>Sweden(se)</p>
-                        <p onClick={() => {setCountry("sg");togglershowhide()}}>Singapore(sg)</p>
-                        <p onClick={() => {setCountry("si");togglershowhide()}}>Slovenia(si)</p>
-                        <p onClick={() => {setCountry("sk");togglershowhide()}}>Slovakia(sk)</p>
-                        <p onClick={() => {setCountry("th");togglershowhide()}}>Thailand(th)</p>
-                        <p onClick={() => {setCountry("tr");togglershowhide()}}>Turkey(tr)</p>
-                        <p onClick={() => {setCountry("tw");togglershowhide()}}>Taiwan(tw)</p>
-                        <p onClick={() => {setCountry("ua");togglershowhide()}}>Ukraine(ua)</p>
-                        <p onClick={() => {setCountry("us");togglershowhide()}}>United States of America(us)</p>
-                        <p onClick={() => {setCountry("ve");togglershowhide()}}>Venezuela(ve)</p>
+                        <p className={country === 'in' ? 'active-choice' : ''} onClick={() => {setCountry("in");togglershowhide()}}>India(in)</p>
+                        <p className={country === 'ae' ? 'active-choice' : ''} onClick={() => {setCountry("ae");togglershowhide()}}>United Arab Emirates (ae)</p>
+                        <p className={country === 'ar' ? 'active-choice' : ''} onClick={() => {setCountry("ar");togglershowhide()}}>Argentina(ar)</p>
+                        <p className={country === 'at' ? 'active-choice' : ''} onClick={() => {setCountry("at");togglershowhide()}}>Austria(at)</p>
+                        <p className={country === 'au' ? 'active-choice' : ''} onClick={() => {setCountry("au");togglershowhide()}}>Australia(au)</p>
+                        <p className={country === 'be' ? 'active-choice' : ''} onClick={() => {setCountry("be");togglershowhide()}}>Belgium(be)</p>
+                        <p className={country === 'bg' ? 'active-choice' : ''} onClick={() => {setCountry("bg");togglershowhide()}}>Bulgaria(bg)</p>
+                        <p className={country === 'br' ? 'active-choice' : ''} onClick={() => {setCountry("br");togglershowhide()}}>Brazil(br)</p>
+                        <p className={country === 'ca' ? 'active-choice' : ''} onClick={() => {setCountry("ca");togglershowhide()}}>Canada(ca)</p>
+                        <p className={country === 'ch' ? 'active-choice' : ''} onClick={() => {setCountry("ch");togglershowhide()}}>Switzerland(ch)</p>
+                        <p className={country === 'cn' ? 'active-choice' : ''} onClick={() => {setCountry("cn");togglershowhide()}}>China(cn)</p>
+                        <p className={country === 'co' ? 'active-choice' : ''} onClick={() => {setCountry("co");togglershowhide()}}>Colombia(co)</p>
+                        <p className={country === 'cu' ? 'active-choice' : ''} onClick={() => {setCountry("cu");togglershowhide()}}>Cuba(cu)</p>
+                        <p className={country === 'cz' ? 'active-choice' : ''} onClick={() => {setCountry("cz");togglershowhide()}}>Czech(cz)</p>
+                        <p className={country === 'de' ? 'active-choice' : ''} onClick={() => {setCountry("de");togglershowhide()}}>Germany(de)</p>
+                        <p className={country === 'eg' ? 'active-choice' : ''} onClick={() => {setCountry("eg");togglershowhide()}}>Egypt(eg)</p>
+                        <p className={country === 'fr' ? 'active-choice' : ''} onClick={() => {setCountry("fr");togglershowhide()}}>France(fr)</p>
+                        <p className={country === 'gb' ? 'active-choice' : ''} onClick={() => {setCountry("gb");togglershowhide()}}>United Kingdom(gb)</p>
+                        <p className={country === 'gr' ? 'active-choice' : ''} onClick={() => {setCountry("gr");togglershowhide()}}>Greece(gr)</p>
+                        <p className={country === 'hk' ? 'active-choice' : ''} onClick={() => {setCountry("hk");togglershowhide()}}>Hong Kong(hk)</p>
+                        <p className={country === 'hu' ? 'active-choice' : ''} onClick={() => {setCountry("hu");togglershowhide()}}>Hungary(hu)</p>
+                        <p className={country === 'id' ? 'active-choice' : ''} onClick={() => {setCountry("id");togglershowhide()}}>Indonesia(id)</p>
+                        <p className={country === 'ie' ? 'active-choice' : ''} onClick={() => {setCountry("ie");togglershowhide()}}>Ireland(ie)</p>
+                        <p className={country === 'il' ? 'active-choice' : ''} onClick={() => {setCountry("il");togglershowhide()}}>Isreal(il)</p>
+                        <p className={country === 'it' ? 'active-choice' : ''} onClick={() => {setCountry("it");togglershowhide()}}>Italy(it)</p>
+                        <p className={country === 'jp' ? 'active-choice' : ''} onClick={() => {setCountry("jp");togglershowhide()}}>Japan(jp)</p>
+                        <p className={country === 'kr' ? 'active-choice' : ''} onClick={() => {setCountry("kr");togglershowhide()}}>South Korea(kr)</p>
+                        <p className={country === 'lt' ? 'active-choice' : ''} onClick={() => {setCountry("lt");togglershowhide()}}>Lithuania(lt)</p>
+                        <p className={country === 'lv' ? 'active-choice' : ''} onClick={() => {setCountry("lv");togglershowhide()}}>Latvia(lv)</p>
+                        <p className={country === 'ma' ? 'active-choice' : ''} onClick={() => {setCountry("ma");togglershowhide()}}>Morocco(ma)</p>
+                        <p className={country === 'mx' ? 'active-choice' : ''} onClick={() => {setCountry("mx");togglershowhide()}}>Mexico(mx)</p>
+                        <p className={country === 'my' ? 'active-choice' : ''} onClick={() => {setCountry("my");togglershowhide()}}>Malaysia(my)</p>
+                        <p className={country === 'ng' ? 'active-choice' : ''} onClick={() => {setCountry("ng");togglershowhide()}}>Nigeria(ng)</p>
+                        <p className={country === 'nl' ? 'active-choice' : ''} onClick={() => {setCountry("nl");togglershowhide()}}>Netherlands(nl)</p>
+                        <p className={country === 'no' ? 'active-choice' : ''} onClick={() => {setCountry("no");togglershowhide()}}>Norway(no)</p>
+                        <p className={country === 'nz' ? 'active-choice' : ''} onClick={() => {setCountry("nz");togglershowhide()}}>New Zealand(nz)</p>
+                        <p className={country === 'ph' ? 'active-choice' : ''} onClick={() => {setCountry("ph");togglershowhide()}}>Phillipines(ph)</p>
+                        <p className={country === 'pl' ? 'active-choice' : ''} onClick={() => {setCountry("pl");togglershowhide()}}>Poland(pl)</p>
+                        <p className={country === 'pt' ? 'active-choice' : ''} onClick={() => {setCountry("pt");togglershowhide()}}>Portugal(pt)</p>
+                        <p className={country === 'ro' ? 'active-choice' : ''} onClick={() => {setCountry("ro");togglershowhide()}}>Romania(ro)</p>
+                        <p className={country === 'rs' ? 'active-choice' : ''} onClick={() => {setCountry("rs");togglershowhide()}}>Serbia(rs)</p>
+                        <p className={country === 'ru' ? 'active-choice' : ''} onClick={() => {setCountry("ru");togglershowhide()}}>Russia(ru)</p>
+                        <p className={country === 'sa' ? 'active-choice' : ''} onClick={() => {setCountry("sa");togglershowhide()}}>South Africa(sa)</p>
+                        <p className={country === 'se' ? 'active-choice' : ''} onClick={() => {setCountry("se");togglershowhide()}}>Sweden(se)</p>
+                        <p className={country === 'sg' ? 'active-choice' : ''} onClick={() => {setCountry("sg");togglershowhide()}}>Singapore(sg)</p>
+                        <p className={country === 'si' ? 'active-choice' : ''} onClick={() => {setCountry("si");togglershowhide()}}>Slovenia(si)</p>
+                        <p className={country === 'sk' ? 'active-choice' : ''} onClick={() => {setCountry("sk");togglershowhide()}}>Slovakia(sk)</p>
+                        <p className={country === 'th' ? 'active-choice' : ''} onClick={() => {setCountry("th");togglershowhide()}}>Thailand(th)</p>
+                        <p className={country === 'tr' ? 'active-choice' : ''} onClick={() => {setCountry("tr");togglershowhide()}}>Turkey(tr)</p>
+                        <p className={country === 'tw' ? 'active-choice' : ''} onClick={() => {setCountry("tw");togglershowhide()}}>Taiwan(tw)</p>
+                        <p className={country === 'ua' ? 'active-choice' : ''} onClick={() => {setCountry("ua");togglershowhide()}}>Ukraine(ua)</p>
+                        <p className={country === 'us' ? 'active-choice' : ''} onClick={() => {setCountry("us");togglershowhide()}}>United States of America(us)</p>
+                        <p className={country === 've' ? 'active-choice' : ''} onClick={() => {setCountry("ve");togglershowhide()}}>Venezuela(ve)</p>
                     </div>
                     <div className="column column2">
                         <h1>Categories <i class="fas fa-caret-down"></i></h1>
-                        <p onClick={() => {setCategory("general");togglershowhide()}}>General</p>
-                        <p onClick={() => {setCategory("business");togglershowhide()}}>Business</p>
-                        <p onClick={() => {setCategory("entertainment");togglershowhide()}}>Entertainment</p>
-                        <p onClick={() => {setCategory("health");togglershowhide()}}>Health</p>
-                        <p onClick={() => {setCategory("science");togglershowhide()}}>Science</p>
-                        <p onClick={() => {setCategory("sports");togglershowhide()}}>Sports</p>
-                        <p onClick={() => {setCategory("technology");togglershowhide()}}>Technology</p>
+                        <p className={category === 'general' ? 'active-choice' : '' } onClick={() => {setCategory("general");togglershowhide()}}>General</p>
+                        <p className={category === 'business' ? 'active-choice' : '' } onClick={() => {setCategory("business");togglershowhide()}}>Business</p>
+                        <p className={category === 'entertainment' ? 'active-choice' : '' } onClick={() => {setCategory("entertainment");togglershowhide()}}>Entertainment</p>
+                        <p className={category === 'health' ? 'active-choice' : '' } onClick={() => {setCategory("health");togglershowhide()}}>Health</p>
+                        <p className={category === 'science' ? 'active-choice' : '' } onClick={() => {setCategory("science");togglershowhide()}}>Science</p>
+                        <p className={category === 'sports' ? 'active-choice' : '' } onClick={() => {setCategory("sports");togglershowhide()}}>Sports</p>
+                        <p className={category === 'technology' ? 'active-choice' : '' } onClick={() => {setCategory("technology");togglershowhide()}}>Technology</p>
                     </div>
                     <i className="showhide fa fa-times" onClick={togglershowhide} />
                 </div>

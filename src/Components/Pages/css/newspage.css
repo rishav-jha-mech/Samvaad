@@ -51,7 +51,7 @@
     top: 181px;
     right: 120px;
     min-width: 35vw;
-    padding: 25px 35px;
+    padding: 25px 21px;
     display: flex;
     justify-content: space-between;
     /* display: none; */
@@ -85,7 +85,10 @@
     color:#444;
 }
 .sort-choices-container .column p:hover{
-    background-color: #6f00ff31;
+    background-color: #6f00ff4d;
+}
+.active-choice{
+    background-color: #6f00ff4d;
 }
 .sort-choices-container .column1{
     /* background-color: orangered; */
