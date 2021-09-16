@@ -164,7 +164,7 @@
     padding: 0;
     max-width: 100vw;
     border-radius: 8px;
-    box-shadow: 0 0 5px 1px #6f00ffa1;
+    box-shadow: 0 0 5px 1px #6f00ff77;
   }
   .showhide {
     margin-top: 0 !important;
@@ -173,7 +173,7 @@
     right: 18px;
     padding-left: 15px !important;
     padding-bottom: 15px !important;
-    padding-top: 0 !important;
+    padding-top: 10px !important;
   }
   .Card-Container {
     padding: 10px 0 40px 0;

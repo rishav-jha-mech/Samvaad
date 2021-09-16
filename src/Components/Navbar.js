@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import './css/Navbar.css'
 
 function Navbar() {
@@ -26,7 +26,7 @@ const toggle = () => setShowbar(o => !o);
                 {showbar ?
                 <div className="nav-links"> 
                     <a href="/">Home</a>
-                    <a href="#">About</a>
+                    <a href="/comingsoon">About</a>
                     <a href="/SamVaad">Read News</a>
                     <a href="/comingsoon">Donate</a>
                     <a href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>

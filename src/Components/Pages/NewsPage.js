@@ -12,16 +12,16 @@ function NewsPage() {
     const [newsData, setNewsData] = useState([]);
     const [error, setError]= useState(false);
     const [country,setCountry] = useState("in");                  // Default Country Set To => India
-    const [category,setCategory] = useState("general"); // Default set to =>         General
+    const [category,setCategory] = useState("general");           // Default set to =>         General
     const [show,setShow] = useState(false);
-    const [numberofNews,setNumberofNews] = useState("20");
+    const [numberofNews,setNumberofNews] = useState("20");        // Default set to =>          20
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://localhost:800z0/api/${country}/${category}/${numberofNews}`,
+            url: `http://samvaad-api.herokuapp.com/api/${country}/${category}/${numberofNews}`,
         })
             .then((response) => {
                 // console.log(response.data);
@@ -31,7 +31,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 // console.error(error);
-                setError(true)
+                // setError(true)
             })
     }
 

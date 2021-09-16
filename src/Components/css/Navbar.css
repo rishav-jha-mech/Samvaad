@@ -27,6 +27,12 @@
     letter-spacing: 1.6px;
     font-weight: 600;
 }
+.navbar .nav-links a:hover{
+    background: #6f00ff;
+    border-radius: 4px;
+    color: white;
+    transition: 0.5s;
+}
 #contribute{
     background-color: #6f00ff;
     color: white;
@@ -70,6 +76,7 @@
         animation: nav-anime 0.4s linear;
         overflow-y: hidden;
         z-index: 1000;
+        min-height: 400px;
     }
     .navbar .nav-links a{
         color: white;
