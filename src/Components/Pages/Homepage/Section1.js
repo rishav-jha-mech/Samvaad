@@ -11,8 +11,8 @@ export default function Section1() {
                 <h5> Get the latest news, top headlines, opinions, analysis and much more from India and World including current news headlines on elections, politics, economy, weather &amp; business.</h5>
                 <br />
                 <div className="button-container">
-                    <a href="#">Read News</a>
-                    <a href="#">Download App</a>
+                    <a href="/SamVaad">Read News</a>
+                    <a href="/comingsoon">Download App</a>
                 </div>
             </div>
             <div className="image">

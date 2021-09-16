@@ -9,13 +9,13 @@ const toggle = () => setShowbar(o => !o);
         <>
             <div className="navbar" id="pc">
                 <a className="brand" href="/">SamVaad</a>
-                <i class="fa fa-bars" id="bartimetoggler" onClick={()=>setShowbar(true)}/>
-                <div class="nav-links"> 
-                    <a class="ifactive" href="/">Home</a>
-                    <a class="ifactive" href="#">About</a>
-                    <a class="ifactive" href="/SamVaad">Read News</a>
-                    <a class="ifactive" href="#">Donate</a>
-                    <a href="#" id="contribute" href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
+                <i className="fa fa-bars" id="bartimetoggler" onClick={()=>setShowbar(true)}/>
+                <div className="nav-links"> 
+                    <a className="ifactive" href="/">Home</a>
+                    <a className="ifactive" href="/comingsoon">About</a>
+                    <a className="ifactive" href="/SamVaad">Read News</a>
+                    <a className="ifactive" href="/comingsoon">Donate</a>
+                    <a id="contribute" href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
                 </div>
             </div>
 
@@ -24,11 +24,11 @@ const toggle = () => setShowbar(o => !o);
                 <a className="brand" href="/">SamVaad</a>
                 <i className={`fa ${!showbar ? "fa-bars" : "fa-times"} `} id="bartimetoggler" onClick={toggle}/>
                 {showbar ?
-                <div class="nav-links"> 
+                <div className="nav-links"> 
                     <a href="/">Home</a>
                     <a href="#">About</a>
                     <a href="/SamVaad">Read News</a>
-                    <a href="#">Donate</a>
+                    <a href="/comingsoon">Donate</a>
                     <a href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
                 </div>
                 :''}

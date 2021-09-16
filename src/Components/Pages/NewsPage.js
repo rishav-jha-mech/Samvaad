@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 import axios from 'axios'
 import '../css/NewsCard.css'
 import './css/newspage.css'
 import SkeletonPlaceholder from '../SkeletonPlaceholder'
-import './css/newspage.css'
 import {NewsCardLoading , NewsCardLoaded} from '../NewsCard'                                                                                                                                                                           
 import ErrorNews from '../ErrorNews'
 function NewsPage() {
@@ -13,30 +14,30 @@ function NewsPage() {
     const [country,setCountry] = useState("in");                  // Default Country Set To => India
     const [category,setCategory] = useState("general"); // Default set to =>         General
     const [show,setShow] = useState(false);
-    const [numberofNews,setNumberofNews] = useState(20);
+    const [numberofNews,setNumberofNews] = useState("20");
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://localhost:8000/api/${country}/${category}/${numberofNews}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
+            url: `http://localhost:800z0/api/${country}/${category}/${numberofNews}`,
         })
             .then((response) => {
-                console.log(response.data);
-                console.log(response.data.status);
+                // console.log(response.data);
+                // console.log(response.data.status);
                 setNewsData(response.data.articles);
                 setLoading(false);
             })
             .catch((error) => {
-                console.error(error);
-                setError(false) //
+                // console.error(error);
+                setError(true)
             })
     }
 
     useEffect(() => {
         FetchTheNews()
-    },[country,category]);
+    },[country,category,numberofNews]);
 
     const togglershowhide= () =>{
         if (show === false){
@@ -48,6 +49,7 @@ function NewsPage() {
     }
     return (
         <>  {!error ? <>
+        <Navbar />
         <div className="taskbar">
             <h1 id="lane4354354">{category ? category : 'General'}</h1>
             <div className="sort-box-container">
@@ -115,13 +117,27 @@ function NewsPage() {
                     </div>
                     <div className="column column2" onClick={() => setShow(true)}>
                         <h1>Categories <i class="fas fa-caret-down"></i></h1>
-                        <p className={category === 'general' ? 'active-choice' : '' } onClick={() => {setCategory("general");togglershowhide()}}>General</p>
-                        <p className={category === 'business' ? 'active-choice' : '' } onClick={() => {setCategory("business");togglershowhide()}}>Business</p>
-                        <p className={category === 'entertainment' ? 'active-choice' : '' } onClick={() => {setCategory("entertainment");togglershowhide()}}>Entertainment</p>
-                        <p className={category === 'health' ? 'active-choice' : '' } onClick={() => {setCategory("health");togglershowhide()}}>Health</p>
-                        <p className={category === 'science' ? 'active-choice' : '' } onClick={() => {setCategory("science");togglershowhide()}}>Science</p>
-                        <p className={category === 'sports' ? 'active-choice' : '' } onClick={() => {setCategory("sports");togglershowhide()}}>Sports</p>
-                        <p className={category === 'technology' ? 'active-choice' : '' } onClick={() => {setCategory("technology");togglershowhide()}}>Technology</p>
+                        <div className="the-choices">
+                            <p className={category === 'general' ? 'active-choice' : '' } onClick={() => {setCategory("general");togglershowhide()}}>General</p>
+                            <p className={category === 'business' ? 'active-choice' : '' } onClick={() => {togglershowhide();setCategory("business");}}>Business</p>
+                            <p className={category === 'entertainment' ? 'active-choice' : '' } onClick={() => {setCategory("entertainment");togglershowhide()}}>Entertainment</p>
+                            <p className={category === 'health' ? 'active-choice' : '' } onClick={() => {setCategory("health");togglershowhide()}}>Health</p>
+                            <p className={category === 'science' ? 'active-choice' : '' } onClick={() => {setCategory("science");togglershowhide()}}>Science</p>
+                            <p className={category === 'sports' ? 'active-choice' : '' } onClick={() => {setCategory("sports");togglershowhide()}}>Sports</p>
+                            <p className={category === 'technology' ? 'active-choice' : '' } onClick={() => {setCategory("technology");togglershowhide()}}>Technology</p>
+                        </div>
+                    </div>
+                    <div className="column column3" onClick={() => setShow(true)}>
+                        <h1>Results <i class="fas fa-caret-down"></i></h1>
+                        <div className="the-choices">
+                            <p className={numberofNews === '12' ? 'active-choice' : '' } onClick={() => {setNumberofNews("12");togglershowhide()}}>12</p>
+                            <p className={numberofNews === '20' ? 'active-choice' : '' } onClick={() => {setNumberofNews("20");togglershowhide()}}>20</p>
+                            <p className={numberofNews === '30' ? 'active-choice' : '' } onClick={() => {setNumberofNews("30");togglershowhide()}}>30</p>
+                            <p className={numberofNews === '40' ? 'active-choice' : '' } onClick={() => {setNumberofNews("40");togglershowhide()}}>40</p>
+                            <p className={numberofNews === '50' ? 'active-choice' : '' } onClick={() => {setNumberofNews("50");togglershowhide()}}>50</p>
+                            <p className={numberofNews === '4' ? 'active-choice' : '' } onClick={() => {setNumberofNews("4");togglershowhide()}}>Minimum</p>
+                            <p className={numberofNews === '100' ? 'active-choice' : '' } onClick={() => {setNumberofNews("100");togglershowhide()}}>Maximum</p>
+                        </div>
                     </div>
                     <i className="showhide fa fa-times" onClick={togglershowhide} />
                 </div>
@@ -148,7 +164,7 @@ function NewsPage() {
 
                 }
             </div>
-      </>: <ErrorNews />}  </>
+      <Footer /></>: <ErrorNews category={category} />}  </>
     )
 }
 

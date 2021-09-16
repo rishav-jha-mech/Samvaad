@@ -1,5 +1,5 @@
 .error404-container{
-    min-height: 80vh;
+    height: 100vh;
     background: #ff56;
     display: flex;
     justify-content: center;

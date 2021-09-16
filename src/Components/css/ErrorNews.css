@@ -1,6 +1,6 @@
 .news-not-found-error{
     background-color: #f5f6;
-    min-height: 75vh;
+    height: 100vh !important;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,7 @@
 .news-not-found-error h1{
      font-size: 3.8rem;
      margin: 25px 0;
+     text-transform: capitalize;
  }
 .news-not-found-error h2{
     font-size: 2rem;
@@ -42,7 +43,7 @@
         justify-content: space-between;
     }
 }
-@media(max-width:380px){
+@media(max-width:420px){
     .news-not-found-error .go-back-buttons a{
         margin: 10px 5px;
         width: 100%;

@@ -23,7 +23,7 @@ function NewsCardLoaded(data) {
         <div className="Newscard">
             <div className="img-container loaded-img-container">
                 <p>{data.name}</p>
-                <img src={data.urlToImage} />
+                <img src={data.urlToImage} alt=""/>
             </div>
             <div className="info">
                 <div className="author-loaded">{data.author ? data.author : 'Anonymous'}</div>

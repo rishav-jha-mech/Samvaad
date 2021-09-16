@@ -8,7 +8,7 @@ function Section2() {
             <h1> How does <span className="allblock"> SamVaad work ?</span></h1>
             <p>What is certain is that our service <br /> performance is very good and regular.</p>
             <div className="button-container">
-                <a href="#">Get Started</a>
+                <a href="/SamVaad">Get Started</a>
             </div>
         </div>
         <div className="steps">

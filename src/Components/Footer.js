@@ -18,10 +18,10 @@ function Footer() {
             <div className="usefullinks com">
                 <h1>Useful Links</h1>
                 <div className="links">
-                    <a href="https://newsapi.org/"><i class="fas fa-hand-point-right"></i> News API</a>
-                    <a href="https://reactjs.org/"><i class="fas fa-hand-point-right"></i> React Js</a>
-                    <a href="#"><i class="fas fa-hand-point-right"></i> Donate</a>
-                    <a href="https://github.com/rishav-jha-mech/Samvaad"><i class="fas fa-hand-point-right"></i> Contribute</a>
+                    <a href="https://newsapi.org/"><i className="fas fa-hand-point-right"></i> News API</a>
+                    <a href="https://reactjs.org/"><i className="fas fa-hand-point-right"></i> React Js</a>
+                    <a href="/comingsoon"><i className="fas fa-hand-point-right"></i> Donate</a>
+                    <a href="https://github.com/rishav-jha-mech/Samvaad"><i className="fas fa-hand-point-right"></i> Contribute</a>
                 </div>
             </div>
             <div className="contactus com">
