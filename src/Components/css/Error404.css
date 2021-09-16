@@ -1,0 +1,40 @@
+.error404-container{
+    min-height: 80vh;
+    background: #ff56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.error404-container .error404-child {
+	width: 100%;
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 600;
+	text-align: center;
+}
+@media(max-width:750px){
+    .error404-container .error404-child {
+        font-size: 2.8rem;
+        padding: 15px;
+    }
+}
+@media(max-width:450px){
+    .error404-container .error404-child {
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+}

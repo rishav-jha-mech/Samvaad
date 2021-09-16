@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from './Components/Navbar'
 import HomePage from './Components/Pages/Homepage'
 import NewsPage from './Components/Pages/NewsPage'
-// import Error404 from "./Components/Error404"; //Not Yet Made Will Be completed in next commit
+import Error404 from "./Components/Error404";
 // import Homepage from './Components/Pages/Homepage';
 import Footer from './Components/Footer';
 import './App.css'
@@ -16,7 +16,7 @@ function App() {
           <Switch>
           <Route path="/" component={HomePage} exact/>
           <Route path="/SamVaad" component={NewsPage} />
-          {/* <Route component={Error404} /> Not Yet Made Will Be completed in next commit */}
+          <Route component={Error404} />
           </Switch>
         <Footer />
       </BrowserRouter>

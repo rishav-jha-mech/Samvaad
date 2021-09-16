@@ -11,11 +11,11 @@ const toggle = () => setShowbar(o => !o);
                 <a className="brand" href="/">SamVaad</a>
                 <i class="fa fa-bars" id="bartimetoggler" onClick={()=>setShowbar(true)}/>
                 <div class="nav-links"> 
-                    <a class="ifactive" href="#">Home</a>
+                    <a class="ifactive" href="/">Home</a>
                     <a class="ifactive" href="#">About</a>
-                    <a class="ifactive" href="#">Read News</a>
+                    <a class="ifactive" href="/SamVaad">Read News</a>
                     <a class="ifactive" href="#">Donate</a>
-                    <a href="#" id="contribute">Contribute</a>
+                    <a href="#" id="contribute" href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
                 </div>
             </div>
 
@@ -25,11 +25,11 @@ const toggle = () => setShowbar(o => !o);
                 <i className={`fa ${!showbar ? "fa-bars" : "fa-times"} `} id="bartimetoggler" onClick={toggle}/>
                 {showbar ?
                 <div class="nav-links"> 
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                     <a href="#">About</a>
-                    <a href="#">Read News</a>
+                    <a href="/SamVaad">Read News</a>
                     <a href="#">Donate</a>
-                    <a href="#">Contribute</a>
+                    <a href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
                 </div>
                 :''}
             </div>

@@ -123,6 +123,10 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
+.copyright a{
+    color: white;
+    text-decoration: none;
+}
 /* Footer Bottom Copyright */
 
 
