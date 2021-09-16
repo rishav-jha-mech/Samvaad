@@ -19,7 +19,7 @@ function NewsPage() {
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://localhost:8000/api/${country}/${category}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
+            url: `https://samvaad-api.herokuapp.com/api/${country}/${category}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
         })
             .then((response) => {
                 console.log(response.data);
@@ -29,7 +29,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 console.error(error);
-                setError(false) //
+                setError(true) //
             })
     }
 
