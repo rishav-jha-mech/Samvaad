@@ -17,8 +17,9 @@ function NewsPage() {
         setLoading(true)
         setError(false)
         axios({
-            method: 'get',
-            url: `https://newsapi.org/v2/top-headlines?country=${country}${category}&pageSize=100&apiKey=a9692c6fe8ce4ad4acaaf246d31fb5b1`, //&pageSize=100 therefore we wil be getting all the posts
+            headers:{"Access-Control-Allow-Origin":'*'},
+            method: 'GET',
+            url: `http://192.168.1.129:8000/api`, //&pageSize=100 therefore we wil be getting all the posts
         })
             .then((response) => {
                 // console.log(response.data);
