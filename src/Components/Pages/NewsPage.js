@@ -17,20 +17,17 @@ function NewsPage() {
         setLoading(true)
         setError(false)
         axios({
-            headers:{"Access-Control-Allow-Origin":'*'},
+            headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://192.168.1.129:8000/api`, //&pageSize=100 therefore we wil be getting all the posts
+            url: `http://localhost:8000/api`, //&pageSize=100 therefore we wil be getting all the posts
         })
             .then((response) => {
-                // console.log(response.data);
+                console.log(response.data);
+                console.log(response.data.status);
                 setNewsData(response.data.articles);
                 setLoading(false);
             })
             .catch((error) => {
-                console.error(error);
-                console.error(error);
-                console.error(error);
-                console.error(error);
                 console.error(error);
                 setError(true) //
             })
