@@ -13,13 +13,14 @@ function NewsPage() {
     const [country,setCountry] = useState("in");                  // Default Country Set To => India
     const [category,setCategory] = useState("general"); // Default set to =>         General
     const [show,setShow] = useState(false);
+    const [numberofNews,setNumberofNews] = useState(20);
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `https://samvaad-api.herokuapp.com/api/${country}/${category}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
+            url: `http://localhost:8000/api/${country}/${category}/${numberofNews}`, //&pageSize=100 therefore we wil be getting all the posts ***NOTE this feature isnt added for now, right now the client will get the 20 results by default
         })
             .then((response) => {
                 console.log(response.data);
@@ -29,7 +30,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 console.error(error);
-                setError(true) //
+                setError(false) //
             })
     }
 
@@ -50,7 +51,7 @@ function NewsPage() {
         <div className="taskbar">
             <h1 id="lane4354354">{category ? category : 'General'}</h1>
             <div className="sort-box-container">
-                <p className="sort" onClick={togglershowhide}>
+                <p className="sort" onClick={togglershowhide} role="menu">
                     Options <i class="far fa-list-alt"></i>
                 </p>
                 <div className={`sort-choices-container ${show ? "flex" : "hidden"}`}>

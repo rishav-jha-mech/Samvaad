@@ -28,7 +28,7 @@
 /* TaskBar CSS To Get The News From Particular Domain Country or Language*/
 .taskbar {
   margin-top: 35px;
-  padding: 5px 125px;
+  padding: 7px 125px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,6 +42,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
+  color: #6f00ff;
   user-select: none;
 }
 .sort-choices-container {
@@ -164,16 +165,9 @@
     max-width: 100vw;
     border-radius: 8px;
     box-shadow: 0 0 5px 1px #6f00ffa1;
-    animation: menu 0.5s ease-in;
   }
-    @keyframes menu{
-     0%{
-         left: -100vw;
-         opacity: 0;
-     }   
-    }
   .showhide {
-    margin-top: 0;
+    margin-top: 0 !important;
     margin-right: 0;
     position: absolute;
     right: 18px;
@@ -240,7 +234,7 @@
 /* Custom Scrollbar*/
 .stats-container {
   display: flex;
-  padding: 0 7.3vw;
+  padding: 8px 7.3vw;
 }
 @media (max-width: 600px) {
   .stats-container {
@@ -253,13 +247,9 @@
   .stats-container {
     display: block;
   }
-}
-#stats {
-  font-size: 14px;
-  margin-top: 8px;
-}
-@media (max-width: 450px) {
   #stats {
+    font-size: 14px;
+    margin-top: 8px;
     text-align: center;
     display: block;
     margin: 15px 0;
@@ -277,7 +267,7 @@
 }
 .showhide {
   font-size: 30px;
-  margin-top: 7px;
+  margin-top: -7px;
   color: #6f00ff;
   padding: 8px;
   margin-right: -12px;
