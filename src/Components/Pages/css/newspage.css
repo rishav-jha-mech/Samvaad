@@ -176,6 +176,9 @@
 }
 /* MAnaging The Options in smaller devices*/
 @media(max-width:600px){ /* Here Dropdown is made and carat is shown */
+    .Card-Container{
+        padding: 10px 0 40px 0;
+    }
     #lane4354354{
         text-align: center;
     }
@@ -230,13 +233,29 @@
   background: #555;
 }
 /* Custom Scrollbar*/
+.stats-container{
+    display: flex;
+    padding: 0 7.3vw;
+}
+@media(max-width:600px){
+    .stats-container{
+        display: flex;
+        justify-content: center;
+        padding: 0 0;
+    }   
+}
+@media(max-width:600px){
+    .stats-container{
+        display: block;
+    }
+}
 #stats{
-    text-align: center;
     font-size: 14px;
     margin-top: 8px;
 }
 @media(max-width:450px){
     #stats{
+        text-align: center;
         display: block;
         margin: 15px 0;
     }
