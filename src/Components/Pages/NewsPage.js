@@ -21,7 +21,7 @@ function NewsPage() {
         axios({
             headers:{'Content-Type': 'application/json',},
             method: 'GET',
-            url: `http://samvaad-api.herokuapp.com/api/${country}/${category}/${numberofNews}`,
+            url: `https://samvaad-api.herokuapp.com/api/${country}/${category}/${numberofNews}`,
         })
             .then((response) => {
                 // console.log(response.data);
@@ -31,7 +31,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 // console.error(error);
-                // setError(true)
+                setError(true)
             })
     }
 

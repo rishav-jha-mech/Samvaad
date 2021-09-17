@@ -28,9 +28,7 @@
     font-weight: 600;
 }
 .navbar .nav-links a:hover{
-    background: #6f00ff;
-    border-radius: 4px;
-    color: white;
+    color: #6f00ff;
     transition: 0.5s;
 }
 #contribute{
