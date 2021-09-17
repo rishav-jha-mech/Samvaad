@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import { useState, useEffect } from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
@@ -30,7 +31,7 @@ function NewsPage() {
                 setLoading(false);
             })
             .catch((error) => {
-                // console.error(error);
+                console.error(error);
                 setError(true)
             })
     }
@@ -47,6 +48,7 @@ function NewsPage() {
             setShow(false);
         }
     }
+    console.clear()
     return (
         <>  {!error ? <>
         <Navbar />
@@ -54,11 +56,11 @@ function NewsPage() {
             <h1 id="lane4354354">{category ? category : 'General'}</h1>
             <div className="sort-box-container">
                 <p className="sort" onClick={togglershowhide} role="menu">
-                    Options <i class="far fa-list-alt"></i>
+                    Options <i className="far fa-list-alt"></i>
                 </p>
                 <div className={`sort-choices-container ${show ? "flex" : "hidden"}`}>
                     <div className="column column1">
-                        <h1>Countries <i class="fas fa-caret-down"></i></h1>
+                        <h1>Countries <i className="fas fa-caret-down"></i></h1>
                         <div className="the-choices">
                             <p className={country === 'in' ? 'active-choice' : ''} onClick={() => {setCountry("in");togglershowhide()}}>India(in)</p>
                             <p className={country === 'ae' ? 'active-choice' : ''} onClick={() => {setCountry("ae");togglershowhide()}}>United Arab Emirates (ae)</p>
@@ -116,7 +118,7 @@ function NewsPage() {
                         </div>
                     </div>
                     <div className="column column2" onClick={() => setShow(true)}>
-                        <h1>Categories <i class="fas fa-caret-down"></i></h1>
+                        <h1>Categories <i className="fas fa-caret-down"></i></h1>
                         <div className="the-choices">
                             <p className={category === 'general' ? 'active-choice' : '' } onClick={() => {setCategory("general");togglershowhide()}}>General</p>
                             <p className={category === 'business' ? 'active-choice' : '' } onClick={() => {togglershowhide();setCategory("business");}}>Business</p>
@@ -128,7 +130,7 @@ function NewsPage() {
                         </div>
                     </div>
                     <div className="column column3" onClick={() => setShow(true)}>
-                        <h1>Results <i class="fas fa-caret-down"></i></h1>
+                        <h1>Results <i className="fas fa-caret-down"></i></h1>
                         <div className="the-choices">
                             <p className={numberofNews === '12' ? 'active-choice' : '' } onClick={() => {setNumberofNews("12");togglershowhide()}}>12</p>
                             <p className={numberofNews === '20' ? 'active-choice' : '' } onClick={() => {setNumberofNews("20");togglershowhide()}}>20</p>
@@ -150,15 +152,15 @@ function NewsPage() {
         </div>
             <div className="Card-Container">
                 {loading ? 
-                    SkeletonPlaceholder.map(() => {
+                    SkeletonPlaceholder.map((placeholder) => {
                         return (<>
-                            <NewsCardLoading />
+                            <NewsCardLoading key={placeholder.id}/>
                         </>)
                     })
                 : 
                 newsData.map((data) => {
                     return (<>
-                        <NewsCardLoaded name={data.source.name} urlToImage={data.urlToImage} date={data.publishedAt} author={data.author} title={data.title} url={data.url} />
+                        <NewsCardLoaded key={data.title} name={data.source.name} urlToImage={data.urlToImage} date={data.publishedAt} author={data.author} title={data.title} url={data.url} />
                     </>)
                 })
 

@@ -7,6 +7,7 @@ import ComingSoon from "./Components/ComingSoon";
 import './App.css'
 
 function App() {
+  console.clear()
   return (
     <>
       <BrowserRouter>
