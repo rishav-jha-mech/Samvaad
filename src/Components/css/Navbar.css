@@ -31,6 +31,7 @@
     color: #6f00ff;
     transition: 0.5s;
 }
+
 #contribute{
     background-color: #6f00ff;
     color: white;
@@ -80,6 +81,9 @@
         color: white;
         font-weight: 600;
         font-size: 22px;
+    }
+    .navbar .nav-links a:hover{
+        color: azure !important;
     }
     @keyframes nav-anime{
         0%{

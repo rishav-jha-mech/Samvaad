@@ -32,7 +32,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 console.error(error);
-                setError(true)
+                // setError(true)
             })
     }
 
