@@ -195,11 +195,7 @@
     font-size: 1.2rem;
   }
   .sort-choices-container .column p {
-    display: none;
     padding: 5px 5px;
-  }
-  .sort-choices-container .column .the-choices {
-    display: none;
   }
   .sort-choices-container .column1:hover .the-choices {
     display: block;
