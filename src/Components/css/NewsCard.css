@@ -108,6 +108,8 @@
   position: absolute;
   margin-top: 10px;
   text-decoration: none;
+  outline: none;
+  border: none;
 }
 /* Loaded CSS */
 

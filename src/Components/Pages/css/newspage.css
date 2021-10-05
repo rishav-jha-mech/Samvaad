@@ -89,6 +89,9 @@
 .active-choice {
   background-color: #6f00ff4d;
 }
+.column p{
+  margin-bottom: 1px;
+}
 /* Carat will beshown only when there is "dropdown" */
 .sort-choices-container .fa-caret-down {
   display: none;
@@ -173,7 +176,7 @@
     right: 18px;
     padding-left: 15px !important;
     padding-bottom: 15px !important;
-    padding-top: 10px !important;
+    padding-top: 1px !important;
   }
   .Card-Container {
     padding: 10px 0 40px 0;
@@ -189,7 +192,6 @@
     height: unset;
     min-height: 2px;
     max-height: 250px;
-    padding: 10px 6px;
   }
   .sort-choices-container .column h1 {
     font-size: 1.2rem;
@@ -197,29 +199,8 @@
   .sort-choices-container .column p {
     padding: 5px 5px;
   }
-  .sort-choices-container .column1:hover .the-choices {
-    display: block;
-  }
-  .sort-choices-container .column1:hover p {
-    display: block;
-  }
-  .sort-choices-container .column2:hover .the-choices {
-    display: block;
-  }
-  .sort-choices-container .column2:hover p {
-    display: block;
-  }
-  .sort-choices-container .column3:hover .the-choices {
-    display: block;
-  }
-  .sort-choices-container .column3:hover p {
-    display: block;
-  }
   .sort-choices-container .fa-caret-down {
     display: unset;
-  }
-  ::-webkit-scrollbar {
-    display: none;
   }
 }
 
@@ -276,4 +257,30 @@
   color: #6f00ff;
   padding: 8px;
   margin-right: -12px;
+}
+/* Accordion For Smaller Devices */
+@media(max-width:600px){ 
+  .sort-choices-container{
+    padding: 10px 0 0 0 !important;
+  }  
+  .sort-choices-container .column {
+    padding: 4px 0;
+  }
+  .column1 .the-choices,
+  .column2 .the-choices,
+  .column3 .the-choices{
+    height: unset !important;
+    max-height: unset;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 5px;
+  }
+  .sort-choices-container .column .none{
+    display: none !important;
+  }
+  .sort-choices-container .column .block{
+    display: block !important;
+    height: 100px !important;
+    transition: 5s !important;
+  }
 }

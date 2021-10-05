@@ -19,8 +19,9 @@ function NewsPage() {
     const [country,setCountry] = useState("in");                  // Default Country Set To => India
     const [category,setCategory] = useState("general");           // Default set to =>         General
     const [show,setShow] = useState(false);
-    const [numberofNews,setNumberofNews] = useState("20");        // Default set to =>          20
-    // const[accordion,setAccordion] = useState(false);           // Will be done in next commit for (small devices)  
+    const [numberofNews,setNumberofNews] = useState(20);          // Default set to =>          20
+    const[accordion,setAccordion] = useState(0);
+
     const FetchTheNews = () => {
         setLoading(true)
         setError(false)
@@ -37,71 +38,63 @@ function NewsPage() {
             })
             .catch((error) => {
                 console.error(error);
-                // setError(true)
+                setError(true)
             })
     }
 
     useEffect(() => {
-        FetchTheNews();setShow(false)
+        FetchTheNews();
+        setShow(false);
     },[country,category,numberofNews]);
-
-    const togglershowhide= () =>{
-        if (show === false){
-            setShow(true);
-        }
-        else{
-            setShow(false);
-        }
-    }
     console.clear()
     return (
         <>  {!error ? <>
         <Navbar />
         <div className="taskbar">
-            <h1 id="lane4354354">{category ? category : 'General'}</h1>
+            <h1 id="lane4354354">{category}</h1>
             <div className="sort-box-container">
-                <p className="sort" onClick={togglershowhide} role="menu">
+                <p className="sort" onClick={() => setShow(!show)} role="menu">
                     Options <i className="far fa-list-alt"></i>
                 </p>
                 <div className={`sort-choices-container ${show ? "flex" : "hidden"}`}>
                     <div className="column column1">
-                        <h1>Countries <i className="fas fa-caret-down"></i></h1>
-                        <div className="the-choices">
+                        <h1 onClick={()=> setAccordion(1)}>Countries <i className="fas fa-caret-down"></i></h1>
+                        <div className={`the-choices ${accordion !== 1 ? "none" : ""}`}>
                             {
                                 Object.entries(CountriesList)
                                 .map( ([CountryCode, CountryName]) => 
-                                <p className={country === `${CountryCode}` ? 'active-choice' : ''} onClick={() => {setCountry(`${CountryCode}`);togglershowhide()}}>{CountryName}</p>
+                                <p  className={country === `${CountryCode}` ? 'active-choice' : ''} onClick={() => {setCountry(`${CountryCode}`);setShow(!show)}}>{CountryName}</p>
                                 )
                             }
                         </div>
                         </div>
-                        <div className="column column2" onClick={() => setShow(true)}>
-                            <h1>Categories <i className="fas fa-caret-down"></i></h1>
-                            <div className="the-choices">
+                    <div className="column column2">
+                            <h1 onClick={() => setAccordion(2)}>Categories <i className="fas fa-caret-down"></i></h1>
+                            <div className={`the-choices ${accordion !== 2 ? "none" : ""}`}>
                             {
                             CategoriesList.map((acategory)=>{
                                 return(
                                     <>
-                                    <p className={category === `${acategory}` ? 'active-choice' : '' } onClick={() => {setCategory(`${acategory}`);togglershowhide()}}>{acategory}</p>
+                                    <p key={acategory} className={category === `${acategory}` ? 'active-choice' : '' } onClick={() => {setCategory(`${acategory}`);setShow(!show)}}>{acategory}</p>
                                     </>
                                 )
                             })
                             }
                         </div>
                         </div>
-                    <div className="column column3" onClick={() => setShow(true)}>
-                        <h1>Results <i className="fas fa-caret-down"></i></h1>
-                        <div className="the-choices">
+                    <div className="column column3">
+                        <h1 onClick={() => setAccordion(3)}>Results <i className="fas fa-caret-down"></i></h1>
+                        <div className={`the-choices ${accordion !== 3 ? "none" : ""}`}>
                             {
                              Object.entries(NoOfNews).map(([numb,banner])=>{
                                 return(
-                                <p className={numberofNews === `${numb}` ? 'active-choice' : '' } onClick={() => {setNumberofNews(`${numb}`);togglershowhide()}}> {banner} </p>    
+                                <p key={numb} className={numberofNews == `${numb}` ? 'active-choice' : '' } onClick={() => {setNumberofNews(`${numb}`);setShow(!show)}}> {banner} </p>    
                                 )
                             })
                             }
                         </div>
                     </div>
-                    <i className="showhide fa fa-times" onClick={togglershowhide} />
+                    <i className="showhide fa fa-times" onClick={() => setShow(!show)} />
                 </div>
             </div>
         </div>
