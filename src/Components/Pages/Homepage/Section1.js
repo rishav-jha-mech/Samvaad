@@ -12,7 +12,7 @@ export default function Section1() {
                 <br />
                 <div className="button-container">
                     <a href="/SamVaad">Read News</a>
-                    <a href="/comingsoon">Download App</a>
+                    <a href="https://drive.google.com/file/d/1lsLOefBcxhb4ybGcsKtgAX8HXhUoIDj1/view?usp=sharing">Download App</a>
                 </div>
             </div>
             <div className="image">
