@@ -15,6 +15,7 @@ function App() {
           <Route path="/" component={HomePage} exact/>
           <Route path="/SamVaad" component={NewsPage} />
           <Route path="/comingsoon" component={ComingSoon} />
+          <Route path="/blogs" component={ComingSoon} />
           <Route component={Error404} />
           </Switch>
       </BrowserRouter>
