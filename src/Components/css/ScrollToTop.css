@@ -1,0 +1,18 @@
+.fa-arrow-up{
+    background: #6f00ff;
+    padding: 16px;
+    border-radius: 50%;
+    position: fixed;
+    color: white;
+    font-size: 28px;
+    bottom: 14px;
+    right:  14px;
+    cursor: pointer;
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.288);
+}
+@media(max-width:600px){
+    .fa-arrow-up{
+        padding: 14px;
+        font-size: 24px;
+    }
+}

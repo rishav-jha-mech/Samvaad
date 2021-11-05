@@ -7,7 +7,7 @@ import './css/newspage.css'
 import SkeletonPlaceholder from '../SkeletonPlaceholder'
 import {NewsCardLoading , NewsCardLoaded} from '../NewsCard'                                                                                                                                                                           
 import ErrorNews from '../ErrorNews'
-
+import ScrollToTop from '../ScrollToTop'
 import CountriesList from '../Countries'
 import CategoriesList from '../Categories'
 import NoOfNews from '../NoOfNews'
@@ -38,7 +38,7 @@ function NewsPage() {
             })
             .catch((error) => {
                 console.error(error);
-                setError(true)
+                // setError(true)
             })
     }
 
@@ -103,22 +103,23 @@ function NewsPage() {
             <h3 id="stats"> Category : <span id="autocap">{category ? category : 'General'}</span></h3> 
             <h3 id="stats"> No. of Results : <span id="autocap">{newsData.length}</span></h3>
         </div>
-            <div className="Card-Container">
-                {loading ? 
-                    SkeletonPlaceholder.map((placeholder) => {
-                        return (<>
-                            <NewsCardLoading key={placeholder.id}/>
-                        </>)
-                    })
-                : 
-                newsData.map((data) => {
+        <div className="Card-Container">
+            {loading ? 
+                SkeletonPlaceholder.map((placeholder) => {
                     return (<>
-                        <NewsCardLoaded key={data.title} name={data.source.name} urlToImage={data.urlToImage} date={data.publishedAt} author={data.author} title={data.title} url={data.url} />
+                        <NewsCardLoading key={placeholder.id}/>
                     </>)
                 })
+            : 
+            newsData.map((data) => {
+                return (<>
+                    <NewsCardLoaded key={data.title} name={data.source.name} urlToImage={data.urlToImage} date={data.publishedAt} author={data.author} title={data.title} url={data.url} />
+                </>)
+            })
 
-                }
-            </div>
+            }
+        </div>
+        <ScrollToTop />
       <Footer /></>: <ErrorNews category={category} />}  </>
     )
 }
