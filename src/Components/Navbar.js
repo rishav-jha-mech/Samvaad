@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { Link } from 'react-router-dom';
 import './css/Navbar.css'
 
 function Navbar() {
@@ -8,13 +9,13 @@ const toggle = () => setShowbar(o => !o);
     return (
         <>
             <div className="navbar" id="pc">
-                <a className="brand" href="/">SamVaad</a>
+                <Link className="brand" to={{pathname: "/"}}>SamVaad</Link>
                 <i className="fa fa-bars" id="bartimetoggler" onClick={()=>setShowbar(true)}/>
                 <div className="nav-links"> 
-                    <a className="ifactive" href="/">Home</a>
-                    <a className="ifactive" href="/comingsoon">About</a>
-                    <a className="ifactive" href="/SamVaad">Read News</a>
-                    <a className="ifactive" href="/comingsoon">Donate</a>
+                    <Link className="ifactive" to={{pathname: "/"}}>Home</Link>
+                    <Link className="ifactive" to={{pathname: "/comingsoon"}}>About</Link>
+                    <Link className="ifactive" to={{pathname: "/SamVaad"}}>Read News</Link>
+                    <Link className="ifactive" to={{pathname: "/comingsoon"}} >Donate</Link>
                     <a id="contribute" href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
                 </div>
             </div>
@@ -25,11 +26,11 @@ const toggle = () => setShowbar(o => !o);
                 <i className={`fa ${!showbar ? "fa-bars" : "fa-times"} `} id="bartimetoggler" onClick={toggle}/>
                 {showbar ?
                 <div className="nav-links"> 
-                    <a href="/">Home</a>
-                    <a href="/comingsoon">About</a>
-                    <a href="/SamVaad">Read News</a>
-                    <a href="/comingsoon">Donate</a>
-                    <a href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</a>
+                    <Link to={{pathname: "/"}}>Home</Link>
+                    <Link to={{pathname: "/comingsoon"}}>About</Link>
+                    <Link to={{pathname: "/SamVaad"}}>Read News</Link>
+                    <Link to={{pathname: "/comingsoon"}} >Donate</Link>
+                    <Link href="https://github.com/rishav-jha-mech/Samvaad.git">Contribute</Link>
                 </div>
                 :''}
             </div>
